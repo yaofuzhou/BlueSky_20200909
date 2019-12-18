@@ -102,15 +102,6 @@ if qt:
                 print('[FAIL]')
                 print('Could not determine GL version')
 
-            print("Checking for pyopengl-accelerate", end=' ')
-        try:
-            import OpenGL_accelerate
-        except ImportError:
-            print("[FAIL]")
-        else:
-            print('[OK]')
-
-
 print("Checking for pygame             ", end=' ')
 try:
     import pygame

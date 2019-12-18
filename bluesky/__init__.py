@@ -62,27 +62,21 @@ def init(mode='sim', pygame=False, discovery=False, cfgfile='', scnfile=''):
         # Check whether simulation node should run detached
         detached = (mode[-8:] == 'detached')
         from bluesky.traffic import Traffic
-        from bluesky.simulation import Simulation
+
         if pygame:
             from bluesky.ui.pygame import Screen
-            from bluesky.network.detached import Node
+            from bluesky.simulation.pygame import Simulation
         else:
-            from bluesky.simulation import ScreenIO as Screen
-            if detached:
-                from bluesky.network.detached import Node
-            else:
-                from bluesky.network.node import Node
+            from bluesky.simulation.qtgl import Simulation, ScreenIO as Screen
 
         from bluesky import stack
         from bluesky.tools import plugin, varexplorer
 
         # Initialize singletons
-        global traf, sim, scr, net
+        global traf, sim, scr
         traf = Traffic()
-        sim = Simulation()
+        sim = Simulation(detached)
         scr = Screen()
-        net = Node(settings.simevent_port,
-                   settings.simstream_port)
 
         # Initialize remaining modules
         plugin.init(mode)

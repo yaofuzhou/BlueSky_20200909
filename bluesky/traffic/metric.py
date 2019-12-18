@@ -462,7 +462,7 @@ class metric_CoCa():
 
     def AircraftCell(self,cells,time):
         if floor(time) >= self.resettime:
-            bs.sim.hold()
+            bs.sim.pause()
             self.reset()
             self.resettime = self.resettime + self.deltaresettime
             self.iteration = self.iteration + 1
@@ -579,7 +579,7 @@ class metric_HB():
 
     def applymetric(self):
         time1 = time()
-        bs.sim.hold()
+        bs.sim.pause()
         self.doubleconflict = 0
         # relative pos x and pos y
         self.step = self.step + 1
@@ -1433,7 +1433,7 @@ class Metric():
 
     def plot(self):
         # Pause simulation
-        bs.sim.hold()
+        bs.sim.pause()
 
         # Open a plot window attached to a command?
         #    plot, showplot and other matplotlib commands

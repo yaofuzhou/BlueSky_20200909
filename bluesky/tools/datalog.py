@@ -32,7 +32,11 @@ def crelog(name, dt=None, header=''):
     return allloggers[name]
 
 
-def update():
+def preupdate(simt):
+    pass
+
+
+def postupdate():
     """ This function writes to files of all periodic logs by calling the appropriate
     functions for each type of periodic log, at the approriate update time. """
     for log in periodicloggers.values():
@@ -153,7 +157,7 @@ class CSVLogger:
             varlist += additional_vars
 
             # Get the number of rows from the first array/list
-            nrows = 1
+            nrows = 0
             for v in varlist:
                 if isinstance(v, (list, np.ndarray)):
                     nrows = len(v)
@@ -199,7 +203,7 @@ class CSVLogger:
             # TODO: add list of logging vars
         elif args[0] == 'ON':
             if len(args) > 1:
-                if isinstance(args[1], float):
+                if type(args[1]) is float:
                     self.dt = args[1]
                 else:
                     return False, 'Turn ' + self.name + ' on with optional dt'

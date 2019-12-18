@@ -3,8 +3,7 @@ from bluesky.tools.trafficarrays import TrafficArrays, RegisterElementParameters
 
 
 class PerfBase(TrafficArrays):
-    """ Base class for BlueSky aircraft performance implementations. """
-
+    ''' Base class for BlueSky aircraft performance implementations. '''
     def __init__(self):
         super().__init__()
 
@@ -33,9 +32,5 @@ class PerfBase(TrafficArrays):
         pass
 
     def engchange(self):
-        """implement this method """
-        pass
-
-    def show_performance(self, acid):
         """implement this method """
         pass

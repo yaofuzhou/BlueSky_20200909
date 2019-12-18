@@ -10,15 +10,20 @@ def main():
     """ Start the mainloop (and possible other threads) """
     splash.show()
     bs.init(pygame=True)
-    # bs.sim.op()
+    bs.sim.operate()
     bs.scr.init()
 
     # Main loop for BlueSky
-    while not bs.sim.state == bs.END:
-        bs.sim.step()   # Update sim
+    while not bs.sim.mode == bs.sim.end:
+        bs.sim.update()   # Update sim
         bs.scr.update()   # GUI update
 
-    bs.sim.quit()
+        # Restart traffic simulation:
+        if bs.sim.mode == bs.sim.init:
+            bs.sim.reset()
+            bs.scr.objdel()     # Delete user defined objects
+
+    bs.sim.stop()
     pg.quit()
 
     print('BlueSky normal end.')
