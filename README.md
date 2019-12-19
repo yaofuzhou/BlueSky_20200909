@@ -1,6 +1,6 @@
 # One to Any: Distributed Conflict Resolution with Deep Multi-Agent Reinforcement Learning and Long Short-Term Memory 
 ## Marc Brittain
-### mwb@iastate.edu
+### mwb AT iastate DOT edu
 
 Fork of the BlueSky Air Traffic Simulator developed by TU Delft. The original ReadMe can be seen below.
 
