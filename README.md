@@ -28,7 +28,9 @@ If any of this work helped in your project or research I would love to hear abou
 
 Please cite the paper below in your work :) 
 
-https://www.researchgate.net/publication/338019241_One_to_Any_Distributed_Conflict_Resolution_with_Deep_Multi-Agent_Reinforcement_Learning_and_Long_Short-Term_Memory
+
+[paper](https://www.researchgate.net/publication/338019241_One_to_Any_Distributed_Conflict_Resolution_with_Deep_Multi-Agent_Reinforcement_Learning_and_Long_Short-Term_Memory)
+
 
 
 ------------------------------------------------------------------------------------------------------------------------------
