@@ -9,7 +9,7 @@ To run each of the individual case study as described in each paper please run t
 
 1. Download lstm branch of this repository
 2. Download required modules:
-  * tensorflow 1.x
+>>  * tensorflow 1.x
   * keras
   * numpy
   * shapely
