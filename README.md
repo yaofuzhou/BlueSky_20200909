@@ -20,7 +20,15 @@ To run each of the individual case study as described in each paper please run t
 3. To run Case Study A open up the `settings.cfg` and change `enabled_plugins = ['case_study_a']`
 4. Then you can run `python BlueSky.py --sim --detached --scenfile multi_agent.scn`. This will kick off a training run.
 
-Please send me an email if you have any questions!
+
+If any of this work helped in your project or research I would love to hear about it! Please send me and email at the address listed above for comments, questions, or just to say hi.
+
+
+
+
+Please cite the paper below in your work :) 
+
+https://www.researchgate.net/publication/338019241_One_to_Any_Distributed_Conflict_Resolution_with_Deep_Multi-Agent_Reinforcement_Learning_and_Long_Short-Term_Memory
 
 
 ------------------------------------------------------------------------------------------------------------------------------
