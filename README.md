@@ -9,8 +9,14 @@ To run each of the individual case study as described in each paper please run t
 
 1. Download lstm branch of this repository
 2. Download required modules:
+* tensorflow 1.x
 * keras
-2. Ensure tensorflow 1.x is installed along with keras, numpy, geopy, etc. 
+* numpy
+* shapely
+* geopy
+* pandas
+* numba
+
 3. To run Case Study A open up the `settings.cfg` and change `enabled_plugins = ['case_study_a']`
 4. Then you can run `python BlueSky.py --sim --detached --scenfile multi_agent.scn`. This will kick off a training run.
 
