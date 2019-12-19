@@ -1,4 +1,9 @@
-# Fork of the BlueSky Air Traffic Simulator developed by TU Delft. The original ReadMe can be seen below.
+# One to Any: Distributed Conflict Resolution with Deep Multi-Agent Reinforcement Learning and Long Short-Term Memory 
+## Marc Brittain
+### mwb@iastate.edu
+
+Fork of the BlueSky Air Traffic Simulator developed by TU Delft. The original ReadMe can be seen below.
+
 
 To run each of the individual case study as described in each paper please run the following steps:
 
@@ -7,7 +12,10 @@ To run each of the individual case study as described in each paper please run t
 3. To run Case Study A open up the `settings.cfg` and change `enabled_plugins = ['case_study_a']`
 4. Then you can run `python BlueSky.py --sim --detached --scenfile multi_agent.scn`. This will kick off a training run.
 
+Please send me an email if you have any questions!
 
+
+------------------------------------------------------------------------------------------------------------------------------
 
 
 
