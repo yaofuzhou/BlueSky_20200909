@@ -360,7 +360,7 @@ def getClosestAC(state,traf,route_keeper,new_action,n_states,store_terminal,agen
                 int_route = route_keeper[j]  # get the route for intruder
                 if own_route == int_route:  # if two aircraft are on same route
                     # check dist of ownship to all intersections
-                    own_dist_intersections = [agent.dist_goal['KL' + str(i)] - agent.intersection_distances[own_route][route] for route in agent.conflict_routes[own_route]]
+                    own_dist_intersections = [agent.dist_goal[traf.id[i]] - agent.intersection_distances[own_route][route] for route in agent.conflict_routes[own_route]]
                     if not (np.array(own_dist_intersections) < 0).all():  # if ownship did not pass all intersections yet
                         arr = np.array(own_dist_intersections)
                         # find the smallest positive number (next intersection)
@@ -368,28 +368,28 @@ def getClosestAC(state,traf,route_keeper,new_action,n_states,store_terminal,agen
                         own_eti = own_dist_intersections[min_route_index] / traf.tas[i]
                         route_next_intersection = agent.conflict_routes[own_route][min_route_index]
                         # intruder ETI to next intersection
-                        int_dist_intersection = agent.dist_goal['KL' + str(j)] - agent.intersection_distances[own_route][route_next_intersection]
+                        int_dist_intersection = agent.dist_goal[traf.id[j]] - agent.intersection_distances[own_route][route_next_intersection]
                         int_eti = int_dist_intersection / traf.tas[j]
 
                         # ETI difference
                         eti[i, j] = abs(own_eti - int_eti)
                         eti[j, i] = abs(own_eti - int_eti)
                     else:  # if ownship passed all intersections, calc ETI to goal
-                        own_eti = agent.dist_goal['KL' + str(i)] / traf.tas[i]
-                        int_eti = agent.dist_goal['KL' + str(j)] / traf.tas[j]
+                        own_eti = agent.dist_goal[traf.id[i]] / traf.tas[i]
+                        int_eti = agent.dist_goal[traf.id[j]] / traf.tas[j]
                         eti[i, j] = abs(own_eti - int_eti)
                         eti[j, i] = abs(own_eti - int_eti)
 
                 else:  # if two aircraft on different routes
                     # ownship ETI
-                    own_eti = (agent.dist_goal['KL' + str(i)] - agent.intersection_distances[own_route][int_route]) / traf.tas[i]
+                    own_eti = (agent.dist_goal[traf.id[i]] - agent.intersection_distances[own_route][int_route]) / traf.tas[i]
                     if own_eti < 0:  # ownship already passed this intersection
                         eti[i, j] = 9999
                         eti[j, i] = 9999
 
                     else:
                         # intruder ETI
-                        int_eti = (agent.dist_goal['KL' + str(j)] - agent.intersection_distances[int_route][own_route]) / traf.tas[j]
+                        int_eti = (agent.dist_goal[traf.id[j]] - agent.intersection_distances[int_route][own_route]) / traf.tas[j]
                         if int_eti < 0:  # intruder already passed this intersection
                             eti[i, j] = 9999
                             eti[j, i] = 9999
