@@ -129,7 +129,7 @@ class PPO_Agent:
         self.value_size = 1
         self.getRouteDistances()
         self.model_check = []
-        self.model = self._build_A2C()
+        self.model = self._build_PPO()
 
         self.count = 0
 
@@ -239,7 +239,7 @@ class PPO_Agent:
             return context_arr.reshape(1,1,7)
 
 
-    def _build_A2C(self):
+    def _build_PPO(self):
 
         I = tf.keras.layers.Input(shape=(self.state_size,),name='states')
 
