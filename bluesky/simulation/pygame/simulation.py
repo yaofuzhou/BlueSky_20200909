@@ -54,7 +54,8 @@ class Simulation:
 
     def update(self):
 
-        self.syst = time.clock()
+        #self.syst  = time.clock() feature removed in Python 3.8.
+        self.syst  = time.process_time()
 
         if self.mode == Simulation.init:
             self.operate()
@@ -152,7 +153,8 @@ class Simulation:
 
     def operate(self):  # Back to op-mode: run after HOLD/PAUSE
         self.mode  = self.op
-        self.syst  = time.clock()
+        #self.syst  = time.clock() feature removed in Python 3.8.
+        self.syst  = time.process_time()
         self.syst0 = self.syst-self.simt
         self.tprev = self.simt-0.001  # allow 1 msec step rto avoid div by zero
         return
